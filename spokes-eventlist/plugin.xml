@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:gap="http://phonegap.com/ns/1.0"
+    id="com.philosophy.spokes.eventlist"
+    version="0.0.1">
+    
+    <name>EventList</name>
+    <description>A Cordova plugin for retrieving events from the calendar.</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,eventlist,calendar events,calendar list</keywords>
+
+    <engines>
+            <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/eventlist.js" name="eventlist">
+        <clobbers target="window.EventList" />
+    </js-module>    
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="EventList">
+                <param name="ios-package" value="CDVEventList" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/CDVEventList.h" />
+        <source-file src="src/ios/CDVEventList.m" />
+        
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+    </platform>
+
+</plugin>
