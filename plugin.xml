@@ -11,11 +11,11 @@
     <keywords>cordova,eventlist,calendar events,calendar list</keywords>
 
     <engines>
-            <engine name="cordova" version=">=3.0.0" />
+            <engine name="cordova" version=">=7.0.1" />
     </engines>
 
     <js-module src="www/eventlist.js" name="eventlist">
-        <clobbers target="window.EventList" />
+        <clobbers target="EventList" />
     </js-module>    
     
     <!-- ios -->
